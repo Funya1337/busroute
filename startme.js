@@ -20,7 +20,7 @@ const rl = readline.createInterface({
 			});
   	}
 	}
-	let stations = new Route(arr, answer);
+	let stations = new Route(arr);
 	stations.startRide();
 	rl.question('Choose the big letter at the list! Where you now stand?! ', (answer) => {
 		if (answer !== 'R' && answer !== 'K' && answer !== 'T' && answer !== 'V' && answer !== 'P') {
@@ -34,8 +34,6 @@ const rl = readline.createInterface({
 			} else {
 				console.log(`Good, you there: ${answer1}`)
 			}
-				stations.testFunc();
-
 				if (answer === 'R' && answer1 === 'R') {
 					console.log('nearest bus will come through 0 seconds');
 				}
