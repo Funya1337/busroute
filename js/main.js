@@ -13,6 +13,7 @@ class Route {
 		let indexEnd = this.arr.indexOf(endPoint);
 		let resTime = Math.abs((indexStart - indexEnd) * this.timeInterval);
 		console.log(`nearest bus will come through ${resTime} seconds`);
+		document.getElementById('result').innerHTML = `nearest bus will come through ${resTime} seconds`
 	}
 }
 let stations = new Route(arrNames, arr, 20);
@@ -32,5 +33,9 @@ function take2(id2){
 function main() {
 	let startPointCap = startId;
 	let endPointCap = endId;
-	stations.CheckInterval(startPointCap, endPointCap);
+	if (startPointCap === endPointCap) {
+		document.getElementById('result').innerHTML = 'wrong position'
+	} else {
+		stations.CheckInterval(startPointCap, endPointCap);
+	}
 }
